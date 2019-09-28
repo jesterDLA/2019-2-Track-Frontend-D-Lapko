@@ -7,15 +7,18 @@
  * convertBytesToHuman(5) === 5
  */
 
+import convertBytesToHuman from "../convertBytesToHuman.js"
 
 test('Возвращает false для неправильного типа данных', () => {
-  expect(convertBytesToHuman(/* ... */).toBe(/* ... */))
-  // ...
+  expect(convertBytesToHuman(-123)).toBe(false)
+  expect(convertBytesToHuman(1.3)).toBe(false)
+  expect(convertBytesToHuman("I want macbook(")).toBe(false)
 });
 
 test('Возвращает корректное значение для чисел', () => {
-  expect(convertBytesToHuman(/* ... */).toBe(/* ... */))
-  // ...
+  expect(convertBytesToHuman(1025)).toBe("1 KB")
+  expect(convertBytesToHuman(1524363)).toBe("1.45 MB")
+  expect(convertBytesToHuman(15)).toBe("15 B")
 });
 
 // другая группа проверок

@@ -17,7 +17,10 @@ correctSentence("Greetings, friends") == "Greetings, friends."
 correctSentence("Greetings, friends.") == "Greetings, friends."
  */
 
-function correctSentence(text) {
-  // your solution goes here
-  return text;
+export default function correctSentence(text) {
+  if (!text) return text;
+  let corrected = text[0].toUpperCase() + text.slice(1);
+  if (corrected[corrected.length - 1] != ".") corrected += "."; 
+  return corrected;
 }
+
